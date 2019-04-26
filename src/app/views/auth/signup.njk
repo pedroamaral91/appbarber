@@ -1,16 +1,16 @@
 {% extends "_layouts/auth.njk" %}
 {% block body %}
-  <form action="/signup" method="post">
+  <form action="/signup" method="post" enctype="multipart/form-data">
     <label for="avatar">
       <img src="/images/avatr.svg" alt="avatar" height="24" />
     </label>
-    <input id="avatar" name="avatar" type="file" />
+    <input id="avatar" name="avatar" type="file"  />
 
     <input type="text" placeholder="First and Last name" name="name" />
 
     <input type="email" name="email" id="email" placeholder="E-mail" />
 
-    <input type="password" name="password" id="password" placeholder="Senha" />
+    <input type="password" name="password" id="password" placeholder="Password" />
     <label for="provider">
       I'm a barber
       <input type="checkbox" name="provider" id="provider" value="1" />
