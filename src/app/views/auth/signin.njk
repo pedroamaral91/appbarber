@@ -1,0 +1,22 @@
+{% extends "_layouts/auth.njk" %}
+{% block body %}
+  <form action="/signin" method="post">
+    <img src="/images/logo.svg" height="42" />
+    <input type="email" name="email" id="email" placeholder="E-mail" />
+    <input type="password" name="password" id="password" placeholder="Password" />
+    <button type="submit">Sign in</button>
+
+    <a href="/">Register a free account!</a>
+  </form>
+
+  <script>
+    var avatarInput = document.getElementById('avatar');
+    var img = document.querySelector('label[for=avatar] img')
+
+    avatarInput.onchange = function(e) {
+      img.classList.add('preview')
+      img.src = URL.createObjectURL(e.target.files[0])
+    }
+  </script>
+
+{% endblock %}
